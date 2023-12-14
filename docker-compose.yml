@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_DB=my_store
       - POSTGRES_USER=akira
-      - POSTGRES_DB=admin123
+      - POSTGRES_PASSWORD=admin123
     ports:
       - 5432:5432
     volumes:
