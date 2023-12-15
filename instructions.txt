@@ -13,3 +13,42 @@ Creamos archivo configuración de Docker
       docker-compose down
 Los contenedores como tal no tienen un estado/persistencia, siq ueremos que la tengan, debemos agregar un volumen
     el volumen agregado a la documentacion, depende de la imagen que vamos a usar, revisar documentacion docker
+
+Claes 5 - Interfaces gráficas vs terminal
+  Paso 1 levantar el servicio
+    docker-compose up -d postgres
+  paso 2 - para conectarse con superpoderes, terminal
+    docker-compose exec postgres bash
+
+  Comandos
+  Conectarnos a la base de datos -h localhost (host) local -d my_store es la base de datos -U akira es el usuario
+    psql -h localhost -d my_store -U akira
+
+  para saber la estructura de la base de datos, dentro de ella, el comando es
+    \d+
+
+  para salirnos de la base de datos
+    \q
+
+  Para salirnos del contenedor
+    exit
+
+  Para conectarnos a partir de un motor grafico
+    Vamos a definir otro servicio dentro de nuestro docker
+    Hicimos las modificaciones en el docker-compose.yml para su configuración
+    comando para levantar servicios
+      docker-compose up -d pgadmin
+    Entramos al navegador
+      localhost:5050
+    nos loggeamos
+    Es necesario conectar la base de datos
+      Object > create > Server group
+      Add new server
+        es necesario obtener la IP de nuestro contenedor
+          primero busco el id del contenedor
+            docker ps
+              identifico el id del contenedor y lo inspeccionamos
+                docker inspect {id_del contenedor}
+                  identificamos la IP en la que corre
+
+                  ingresamos los datos en la interfaz grafica para que la conexion quede lista
