@@ -79,3 +79,6 @@ Claes 5 - Interfaces gráficas vs terminal
         npm install --save sequelize
           se necesitan dos drivers adicionales
             npm install --save pg pg-hstore
+
+  Clase 10 - Modelo para base de datos con sequelize
+    creamos carpeta db
