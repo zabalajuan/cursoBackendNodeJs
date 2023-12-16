@@ -82,3 +82,5 @@ Claes 5 - Interfaces gráficas vs terminal
 
   Clase 10 - Modelo para base de datos con sequelize
     creamos carpeta db
+
+  Clase 11 - CRUD Create Read Update Delete
