@@ -62,3 +62,13 @@ Claes 5 - Interfaces gráficas vs terminal
     //por eso crearemos un pool, clase 7
 
   Clase 7 - Manejando un pool de conexiones
+
+  Clase 8 - Variables de entorno
+    No es seguro pasar las credenciales en el codigo
+      creamos carpeta config
+
+    para pasar los accesos vamos a usar el archvo .env
+      //impoprtante, sacarlo del repositorio (gitignore)
+
+    una vez creado el archivo .env, debemos usar un paquete, para pasarselo al archivo config
+      npm i dotenv
