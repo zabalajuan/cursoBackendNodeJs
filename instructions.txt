@@ -52,3 +52,8 @@ Claes 5 - Interfaces gráficas vs terminal
                   identificamos la IP en la que corre
 
                   ingresamos los datos en la interfaz grafica para que la conexion quede lista
+
+  Clase 6 - Integración con node-postgres
+    Instalación
+      npm install pg
+    Añadimos la carpeta libreria, donde agregaremos las conexiones a terceros (ya sea APIs o bases de datos)
