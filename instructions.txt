@@ -57,3 +57,8 @@ Claes 5 - Interfaces gráficas vs terminal
     Instalación
       npm install pg
     Añadimos la carpeta libreria, donde agregaremos las conexiones a terceros (ya sea APIs o bases de datos)
+
+    ESta configuración hace que cada vez que llamamos la conexion, se crea un request nuevo, lo cual no es optimo
+    //por eso crearemos un pool, clase 7
+
+  Clase 7 - Manejando un pool de conexiones
