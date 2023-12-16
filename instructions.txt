@@ -84,3 +84,21 @@ Claes 5 - Interfaces gráficas vs terminal
     creamos carpeta db
 
   Clase 11 - CRUD Create Read Update Delete
+
+  clase 12 - Cambiando la base de datos
+    gracias al modelo que creamos, podemos cambiar la base de datos facilmente
+    Creamos la simagenes en el archivo de configuracion de Docker, tanto mysql como la interfaz grafica phpmyadmin
+      levantamos el servicio mysql
+        docker-compose up -d mysql
+      revisar si se levantó el servicio
+        docker-compose ps
+      levantamos el servicio phpmyadmin
+        docker-compose up -d phpmyadmin
+
+    es necesario instalar el driver para mysql
+      npm install --save mysql2
+
+        como casi todas las configuraciones son iguales, solo cambiando el puerto en el .env deberia ser suficiente
+          para acceder a mysql en vez de postgres
+
+        el otro cambio a realizar es en sequelize, diciendole que el dialect es mysql
