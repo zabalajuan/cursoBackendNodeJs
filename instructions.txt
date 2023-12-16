@@ -72,3 +72,10 @@ Claes 5 - Interfaces gráficas vs terminal
 
     una vez creado el archivo .env, debemos usar un paquete, para pasarselo al archivo config
       npm i dotenv
+
+  Clase 9 Object Relational Model ORM
+    en el entorno de Node los ORM mas conocidos son
+      Sequelize
+        npm install --save sequelize
+          se necesitan dos drivers adicionales
+            npm install --save pg pg-hstore
