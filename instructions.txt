@@ -168,5 +168,10 @@ Claes 5 - Interfaces gráficas vs terminal
     Ahora, modificamos para que al crear un customer, se ingresen los datos del usuario tambien
       empezamos por modificar el customer.schema.js
 
-
+  Clase 18 - Relaciones uno a muchos
+    En este caso vamos a trabajar ocn categorias y con productos
+      - UNa categoria puede tener muchos productos
+        - Un producto solo puede tener una categoria
+          hasMany
+            El que carga con la relación es products
 
