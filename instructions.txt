@@ -175,3 +175,5 @@ Claes 5 - Interfaces gráficas vs terminal
           hasMany
             El que carga con la relación es products
 
+  Clase 19 - Resolviendo Relaciones 1-N
+
