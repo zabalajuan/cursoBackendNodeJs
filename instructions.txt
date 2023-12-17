@@ -102,3 +102,30 @@ Claes 5 - Interfaces gráficas vs terminal
           para acceder a mysql en vez de postgres
 
         el otro cambio a realizar es en sequelize, diciendole que el dialect es mysql
+
+  Clase 13 - Migraciones
+    para correr migrations debemos instalar una libreria de sequelize, lo hicimos como dependencia desarrollo
+      npm i sequelize-cli --save-dev
+    una vez instalado, debemos crear el archivo de configuracion
+      .sequelizerc
+
+  Clase 14 - configurando y corriendo migraciones con npm scripts
+    sequelize lo que nos da es un motor/bolierplate para manejo de migraciones, pero somos nosotros
+      los que tenemos que correr estas migraciones
+
+      lo primero sera configurar unos scripst nuevos en el package.json
+        "migrations:generate" : "sequelize-cli migration:generate --name"
+          corrimos el comando
+            npm run migrations:generate create-user
+
+        el siguiente paso es modificar el archivo de la migracion db/migrations/archivo
+
+        y despues para poderlo correr, correr la migracion, debemos geenrar otro script
+          "migrations:run": "sequelize-cli db:migrate"
+        y el comando para revertir lo que se hizo es
+          "migrations:revert": "sequelize-cli db:migrate:undo"
+        otro comando que vaciaría todas la smigraciones es:
+          "migrations:delete": "sequelize-cli db:migrate:undo:all"
+    Una vez hecho lo anterior, ahora si vamos a correr todo con migrations
+      lo primero seria el comando
+        npm run migrations:run
