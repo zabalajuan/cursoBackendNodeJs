@@ -140,3 +140,22 @@ Claes 5 - Interfaces gráficas vs terminal
 
     Para correr la migration
       npm run migrations:run
+
+  CLase 16 - Relaciones Uno a Uno
+    un cliente solo puede tener un usuario
+      Customer A - User B
+        Option 1 - Has One -> la relación queda en la entidad B
+        Option 2 - Belongs to -> la relación queda en la entidad A
+          En este ejemplo puntual usaremos customer Belongs To User
+            las asociaciones se declaran en el customer.model.js
+              en el metodo statis associate()
+            una vez declarada la asociacion, debemos modificar el index.js de los modelos
+              en el setupModels, despues de declarar los esquemas, definimos las asociaciones
+            AHora, a esta asociación, debemos crearle un schema, modificar el customer.models.js
+
+            una vez definido, lo último es hacer la migration
+
+            Ajustamos el customer.schema.js para que en la creación del customer, tenga en cuenta el id del usuario,
+              Hecho esto, lo siguiente es ajustar el metodo crear en el customer.service.js
+
+
