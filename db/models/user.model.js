@@ -37,8 +37,12 @@ const UserSchema = {
 //este modelo, es el que tiene las formas que nos permiten hacer queries, como find
 class User extends Model {
   //creamos unos metodos estaticos, no necesitamos una declaracion del objeto para acceder a ellos
-  static associate(){
-    //associate
+  static associate(models){
+    //para que la relación quede indicada en ambos, customer|user, vamos a usar un hasOne
+    this.hasOne(models.Customer, {
+      as: 'customer', //este es el alias, para las consultas anidadas por ejemplo
+      foreignKey: 'userId'  //aquí le indicamos como lo va a encontrar, con que campo
+    })
   }
   //va a recibir una conexion
   static config (sequelize){

@@ -158,4 +158,15 @@ Claes 5 - Interfaces gráficas vs terminal
             Ajustamos el customer.schema.js para que en la creación del customer, tenga en cuenta el id del usuario,
               Hecho esto, lo siguiente es ajustar el metodo crear en el customer.service.js
 
+  Clase 17 - Resolviendo las Relaciones uno a uno
+    Primero hicimos una nueva migration, para indicar que solo puede haber un customer per user
+      si la tabla tiene conflictos, como es el caso actual, debemos ajustar la tabla, o no nos dejara hacer lamigracion
+      ajustamos la tabla manualmente
+
+    Ahora, como resolver de forma anidada validaciones, debemos modificar el servicio => customers.service.js
+
+    Ahora, modificamos para que al crear un customer, se ingresen los datos del usuario tambien
+      empezamos por modificar el customer.schema.js
+
+
 

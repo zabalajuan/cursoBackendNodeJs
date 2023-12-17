@@ -24,7 +24,9 @@ class UserService {
     // // const rta = await client.query('SELECT * FROM tasks');
     // const rta = await this.pool.query(query);
     // return rta.rows;
-    const rta = await models.User.findAll();
+    const rta = await models.User.findAll({
+      include:['customer']
+    });
     return rta; //aquí con esta forma de consulta estamos usando programación orientada a objetos
   }
 

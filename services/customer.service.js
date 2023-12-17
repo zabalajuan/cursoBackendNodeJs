@@ -8,12 +8,26 @@ class CustomerService {
   }
 
   async create(data) {
-    const newCustomer = await models.Customer.create(data);
+    // // const newCustomer = await models.Customer.create(data);
+    // //para creear el usuario y el customer al tiempo:
+    // const newUser = await models.User.create(data.user); //aquí estamos creando el usuario nuevo, pasando los datos solo del usuario
+    // const newCustomer = await models.Customer.create({
+    //   ...data,  //el path que no coincida con los atributos, los va a ignorar
+    //   userId: newUser.id //en este punto, si es necesario darle el userId que se acaba de generar
+    //   //de esta manera en este mismo endpoint estamos creando el usuario y el cliente
+    // })
+    //------------------------------------------------
+    //Con Sequelize y gracias a que tenemos definido el modelo y las asociaciones, podemos hacer la creación más simple
+    const newCustomer = await models.Customer.create(data, {
+      include:['user']  //debemos decirle de forma explicita que incluya la asociacion
+    })
     return newCustomer;
   }
 
   async find() {
-    const rta = await models.Customer.findAll();
+    const rta = await models.Customer.findAll({
+      include: ['user'] //aquí le estamos indicando que qeuremos resolver la asociación
+    });
     return rta; //aquí con esta forma de consulta estamos usando programación orientada a objetos
   }
 

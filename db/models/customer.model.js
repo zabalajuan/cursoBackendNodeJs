@@ -37,6 +37,7 @@ const CustomerSchema = {
     field: 'user_id',
     allowNull:false, //todo cliente debe tener un usuario, por eso lo dejaremos en false
     type: DataTypes.INTEGER,
+    unique: true, // no puede haber dos customers con el mismo user
     references: { //aquí es donde le diremos a qué está asociado
       model: USER_TABLE,
       key: 'id' //Hacia donde estará referido en la otra tabla
