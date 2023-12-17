@@ -129,3 +129,14 @@ Claes 5 - Interfaces gráficas vs terminal
     Una vez hecho lo anterior, ahora si vamos a correr todo con migrations
       lo primero seria el comando
         npm run migrations:run
+
+  Clase 15 - Modificar una entidad
+    con sync() no se puede alterar una tabla que ya esta creada
+    Las migrations si nos permiten esto, vamos a agregar a la tabla Users el campo role
+      primero alteramos el models/user.model.js agregando el campo role
+    ahora debo hacer la nueva migration
+      npm run migrations:generate add-role
+        y modificamos el archivo de la migration
+
+    Para correr la migration
+      npm run migrations:run

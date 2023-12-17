@@ -20,6 +20,11 @@ const UserSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
+  role:{
+    allowNull: false,
+    type: DataTypes.STRING,
+    defaultValue: 'customer'
+  },
   createdAt:{
     allowNull:false,
     type: DataTypes.DATE,
@@ -41,7 +46,7 @@ class User extends Model {
       sequelize, //la conexion
       tableName: USER_TABLE, //nombre de la table
       modelName: 'User', //igual que la clase
-      timeStamps: false, //de momento lo dejaremos false
+      timestamps: false, //de momento lo dejaremos false
     }
   }
 }
