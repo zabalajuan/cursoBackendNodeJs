@@ -39,8 +39,13 @@ class Order extends Model {
   static associate(models){
     this.belongsTo(models.Customer, {
       as: 'customer',  //este alias me sirve para resolver queries anidados
-
     });
+    this.belongsToMany(models.Product,{
+      as: 'itmes',                    //el alias de la asociacion
+      through: models.OrderProduct,   //le estamos indicando la tabla ternaria que tiene la relacion
+      foreignKey: 'orderId',          //esta es la llave que resuelve la relacion
+      otherKey: 'productId'           // esta es la otra llave de la tabla ternaria
+    })
   }
   //va a recibir una conexion
   static config (sequelize){

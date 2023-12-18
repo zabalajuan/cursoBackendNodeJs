@@ -183,4 +183,9 @@ Claes 5 - Interfaces gráficas vs terminal
     para este tipo de relaciones, es necesario tener una tabla terciaria
       creamos el modelo order-product.js
 
+      una vez creado el modelo de la tabla ternaria, y la migration
+        La asociación en este caso no la tiene el modelo order-product.model.js sino que va a estar
+          en el modelo de order.model.js
+            y es en la asociacion usanfo belongsToMany() donde le vamos a indicar la tabla ternaria
+
 
