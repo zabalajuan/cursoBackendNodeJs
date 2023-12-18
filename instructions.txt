@@ -177,3 +177,10 @@ Claes 5 - Interfaces gráficas vs terminal
 
   Clase 19 - Resolviendo Relaciones 1-N
 
+  Clase 20 - Ordenes de Compra
+
+  Clase 21 - Relaciiones N-N
+    para este tipo de relaciones, es necesario tener una tabla terciaria
+      creamos el modelo order-product.js
+
+
