@@ -189,3 +189,9 @@ Claes 5 - Interfaces gráficas vs terminal
             y es en la asociacion usanfo belongsToMany() donde le vamos a indicar la tabla ternaria
 
 
+  Clase 22 - Resolviendo N-N
+    Agregamos los items, para resolver la relación N-N
+
+    Tambien podemos totalizar campos, por ejemplo el total de una orden,
+      Este dato no es necesario agregarlo a la tabla - nos lo permite manejar sequelize
+        type: DataTypes.VIRTUAL

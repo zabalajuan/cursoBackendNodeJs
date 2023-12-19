@@ -28,6 +28,19 @@ const OrderSchema = {
     },
     onUpdate: 'CASCADE',  //comportamiento cuando se actualiza el usuario
     onDelete: 'SET NULL'  //comportamiento cuando se elimine un usuario
+  },
+  total: {
+    type: DataTypes.VIRTUAL,
+    get(){
+      if (this.items.length > 0){ //items es el nombre que le dimos a la asociacion
+        //usaremos la formula reduce de los arrays, que nos permite reducir todo a un solo valor, el total
+        //este calculo no es recomendado si hay muchos datos
+        return this.items.reduce((total, item) => {
+          return total + (item.price * item.OrderProduct.amount);
+        },0)
+      }
+      return 0;
+    }
   }
 
 };
@@ -41,7 +54,7 @@ class Order extends Model {
       as: 'customer',  //este alias me sirve para resolver queries anidados
     });
     this.belongsToMany(models.Product,{
-      as: 'itmes',                    //el alias de la asociacion
+      as: 'items',                    //el alias de la asociacion
       through: models.OrderProduct,   //le estamos indicando la tabla ternaria que tiene la relacion
       foreignKey: 'orderId',          //esta es la llave que resuelve la relacion
       otherKey: 'productId'           // esta es la otra llave de la tabla ternaria

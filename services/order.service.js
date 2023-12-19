@@ -11,6 +11,11 @@ class OrderService {
     return newOrder;
   }
 
+  async addItem(data){ //la data viene validada por el validation Handler
+    const newItem = await models.OrderProduct.create(data); //le estamos diciendo que agregue el item a la orden
+    return newItem;
+  }
+
   async find() {
     const orders = await models.Order.findAll();
     return orders;
@@ -25,7 +30,8 @@ class OrderService {
         {
           association: 'customer',
           include: ['user']
-        }
+        },
+        'items'
       ]
     });
     if(!order){

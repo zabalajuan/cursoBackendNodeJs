@@ -5,7 +5,7 @@ const { Customer, CustomerSchema} = require('./customer.model');
 const { Category, CategorySchema} = require('./category.model');
 const { Product, ProductSchema} = require('./product.model');
 const { Order, OrderSchema} = require('./order.model');
-const { OrderProduct, OrderProductSchemaSchema} = require('./order-product.model');
+const { OrderProduct, OrderProductSchema} = require('./order-product.model');
 
 //por parametro le estamos pasando la conexion
 function setupModels(sequelize){
@@ -15,7 +15,7 @@ function setupModels(sequelize){
   Category.init(CategorySchema, Category.config(sequelize));
   Product.init(ProductSchema, Product.config(sequelize));
   Order.init(OrderSchema, Order.config(sequelize));
-  OrderProduct.init(OrderProductSchemaSchema, OrderProduct.config(sequelize));
+  OrderProduct.init(OrderProductSchema, OrderProduct.config(sequelize));
 
   //Definimos las asociaciones
   User.associate(sequelize.models);
