@@ -195,3 +195,11 @@ Claes 5 - Interfaces gráficas vs terminal
     Tambien podemos totalizar campos, por ejemplo el total de una orden,
       Este dato no es necesario agregarlo a la tabla - nos lo permite manejar sequelize
         type: DataTypes.VIRTUAL
+
+  Clase 23 - Paginación
+    vamos a ver la paginación con dos parametros, LIMIT y OFFSET
+      LIMIT - Número de elementos que yo quiero que me traiga
+      OFFSET - funciona como un apuntador
+        por lo general las bases de datos soportan estos dos parametros de forma nativa
+
+        Vamos a modificar el schema de productos
