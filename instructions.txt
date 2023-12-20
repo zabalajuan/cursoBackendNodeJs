@@ -203,3 +203,8 @@ Claes 5 - Interfaces gráficas vs terminal
         por lo general las bases de datos soportan estos dos parametros de forma nativa
 
         Vamos a modificar el schema de productos
+
+  Clase 24 - Filtrando precios con operadores
+    Podemos profundizar mas en la documentacion de sequelize
+  	  en la documentacion estan todas las opciones que sequelize maneja para hacer queries a la
+      base de datos y como los opera, los convierte en AND, OR, <= >= etc

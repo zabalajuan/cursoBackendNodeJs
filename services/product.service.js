@@ -1,5 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
+const {Op} = require('sequelize');
 
 // const pool = require('../libs/postgres.pool');
 // const sequelize = require('../libs/sequelize');
@@ -50,13 +51,27 @@ class ProductsService {
     // const [data] = await sequelize.query(query);
     const options = {
       include: ['category'],
-
+      where:{}    //por defecto lo dejamos vacio, si no viene indicado como parametro en el query
     }
     const {limit, offset} = query;
     if(limit && offset){
       options.limit = limit;
       options.offset = offset;
     }
+
+    const {price} = query;
+    if(price){
+      options.where.price = price;
+    }
+
+    const {price_min, price_max} = query;
+    if(price_min && price_max){
+      options.where.price = {
+        [Op.gte]: price_min,
+        [Op.lte]: price_max,
+      };
+    }
+
     const products = await models.Product.findAll(options
       // include: ['category'],
       // offset:0,
